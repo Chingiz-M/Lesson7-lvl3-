@@ -1,0 +1,26 @@
+﻿<Window x:Class="CinemaProj.Windows.AddCinemaSession"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CinemaProj.Windows"
+        xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+        mc:Ignorable="d"
+        Title="Добавление киносеанса" Height="160" Width="300" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+    <Grid>
+        <Label Content="Фильм:" Margin="10,10,0,0" Style="{StaticResource style}"/>
+        <TextBox x:Name="MovieName" Margin="64,14,0,0"  Width="210" Style="{StaticResource style}"/>
+
+        <Label Content="Время:" Margin="10,46,0,0" Style="{StaticResource style}"/>
+        <xctk:DateTimeUpDown x:Name="MovieTime" Format="FullDateTime" Value="01.01.2021" Margin="64,47,0,0"
+                             AllowTextInput="False"
+                             Style="{StaticResource style}" 
+                             Width="209"/>
+        <Label Content="Кол-во билетов:" Margin="10,82,0,0" Style="{StaticResource style}"/>
+        <xctk:ShortUpDown x:Name="CountTickets" Value="100" Increment="1" Style="{StaticResource style}"
+                            Maximum="100" Minimum="10" Margin="114,82,0,0" Width="65"
+                            AllowTextInput="False" Height="25"/>
+        <Button x:Name="btnAdd" Content="Добавить" Style="{StaticResource style}"
+                Margin="208,82,0,0" Height="25" Width="65" Click="btnAdd_ClickAsync"/>
+    </Grid>
+</Window>
